@@ -1,0 +1,11 @@
+<h1>Please Enter Your Github Id</h1>
+<%= form_tag( '/repository_name', :method => :get ) do %>
+	<%= text_field_tag 'name' %>
+	<%= submit_tag 'submit button' %>
+<% end %>
+<br>
+<% if @response.present? %>
+	<% @response.each do |value| %>
+		<%= value["full_name"]%><br><br>
+	<% end %>
+<% end %>
